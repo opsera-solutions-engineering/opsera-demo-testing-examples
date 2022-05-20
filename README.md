@@ -17,3 +17,6 @@ Tests are all written against WDIO website using the provided examples.
 - JUnit reporter - XML style reporter in the console
 - Allure reporter - HTML style reporter in an /allure-results directory
 
+### Report Generation
+Run `npm run allure` to create the /allure-report directory and present the results in a web browser on localhost
+
