@@ -57,6 +57,9 @@ exports.config = {
         maxInstances: 5,
         //
         browserName: 'chrome',
+        'goog:chromeOptions': {
+            args: ['headless', 'disable-gpu'],
+        },
         acceptInsecureCerts: true
         // If outputDir is provided WebdriverIO can capture driver session logs
         // it is possible to configure which logTypes to include/exclude.
@@ -243,7 +246,12 @@ exports.config = {
         }
     },
 
-
+    afterStep: function (test, scenario, { error, duration, passed }) {
+        if (error) {
+          browser.takeScreenshot();
+        }
+      },
+      
     /**
      * Hook that gets executed after the suite has ended
      * @param {Object} suite suite details
