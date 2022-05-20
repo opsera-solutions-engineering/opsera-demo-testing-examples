@@ -4,7 +4,8 @@
   "description": "Example wdio repo",
   "main": "index.js",
   "scripts": {
-    "test": "npx wdio run wdio.conf.js"
+    "test": "npx wdio run wdio.conf.js",
+    "allure": "allure generate --clean ./allure-results && allure open"
   },
   "repository": {
     "type": "git",
