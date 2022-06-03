@@ -3,3 +3,4 @@ javascript/wdio/allure-results
 javascript/wdio/allure-report
 settings.json
 java/junit/target
+java/junit/allure-results
