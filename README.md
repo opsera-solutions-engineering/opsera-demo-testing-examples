@@ -5,6 +5,14 @@ Repository to house testing examples for Opsera customers.
 - Javascript - WDIO
 - Java - Junit
 
+# Target Projects
+- Java - TestNG
+- Python - Nose
+- Python - Robot
+- Javascript - NightwatchJS
+- Javascript - Cypress
+
+
 
 
 
