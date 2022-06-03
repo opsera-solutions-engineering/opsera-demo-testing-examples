@@ -1,3 +1,5 @@
 javascript/wdio/node_modules
 javascript/wdio/allure-results
 javascript/wdio/allure-report
+settings.json
+java/junit/target
