@@ -2,11 +2,13 @@ package com.opsera.demos.junit;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.Assert;
 
 
 public class OpseraHeadlessTest {
@@ -34,9 +36,15 @@ public class OpseraHeadlessTest {
 
 	@Test
 	public void testOpsera() {
+		String driverPath = System.getenv("CHROMEDRIVER_PATH");
 		// Set the chrome driver
 		// System.setProperty("webdriver.chrome.driver","/usr/local/bin/chromedriver");
-		System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
+		if(driverPath != null){
+			System.setProperty("webdriver.chrome.driver", driverPath);
+		}
+		else {
+			System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/mac/chromedriver");
+		}
 
 		// Create Object of ChromeOption Class
 		ChromeOptions options=new ChromeOptions();
@@ -53,6 +61,7 @@ public class OpseraHeadlessTest {
 		driver.get("http://opsera.io");
 
 		System.out.println("Title is "+driver.getTitle());
+		Assert.assertTrue(driver.getTitle().contains("Opsera"));
 		System.out.println("-------------TEST-------------");
 		// Close the instance
 		driver.quit();
