@@ -12,4 +12,4 @@ mvn test
 
 It will generate `surefire-reports`. 
 
-Addionally, right after test completion, test result file will be in `target/surefire-reports`
+Addionally, right after test completion, test result file will be in: `target/surefire-reports` and `allure-results`
